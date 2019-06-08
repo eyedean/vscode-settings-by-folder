@@ -1,12 +1,8 @@
 # Settings By Folder
 
-https://github.com/eyedean/vscode-settings-by-folder.git
+VS Code allows custom settings (e.g. themes) by User, by Workspace (e.g. window), by Workspace Folder (e.g. multiple repos in one workspace), **but not per sub-folder in a single repo.**
 
-Themes are great but sometimes some are better than others for a certain language.
-
-This extension lets you select which theme to apply by language.
-
-If you prefer, like me, to edit Markdown and AsciiDoc files using a dark theme but code using a light theme, or prefer the coloration of a theme for a specific language, this extension is made for you.
+This extension solves that problem.
 
 ## Preview
 
@@ -14,14 +10,22 @@ If you prefer, like me, to edit Markdown and AsciiDoc files using a dark theme b
 
 ## How to use
 
-1. Create a `.vscode` in the folder you want to customize.
+1. Create a `.vscode` in the folder you want to customize, say `/backend`.
 2. Create a `settings.json` in there.
-3. Put your settings in there. e.g. for changing theme when any of the files in that folder (and subfolders) are open, you can add the following in `<customFolder>/.vscode/settings.json`
+3. Put your settings in there. e.g. for changing theme when any of the files in that folder (and subfolders) are open, you can add the following in `<projectRoot>/backend/.vscode/settings.json`
 ```json
 {
 	"workbench.colorTheme": "Red"
 }
 ```
+4. Now create another one in a different folder, e.g. `<projectRoot>/frontend/.vscode/settings.json` being:
+```json
+{
+	"workbench.colorTheme": "Monokai Dimmed"
+}
+```
+
+That's it!  Switch between the files in the above folders and enjoy. ;) 
 
 ## How does it work?
 
@@ -32,11 +36,11 @@ In case it finds one, it applies the settings to the [WorkplaceFolder Configurat
 Otherwise, if it doesn't find any `.vscode/settings.json` all the way to the root, it resets all the attributes it has ever changed, to its default value.
 
 ## Keep it mind
-
+Unless you want your configs to be shared with other people, you can add `**/.vscode/**` to your `.gitignore`. B-) 
 
 
 ## Credits
 
 Special thanks to [@jsaulou](https://github.com/jsaulou) for making [Theme-By-Language](https://github.com/jsaulou/vscode-theme-by-language) extension which led into this extension!
 
-**Enjoy!**
+**Cheers!**
