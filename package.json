@@ -1,0 +1,51 @@
+{
+    "name": "settings-by-folder",
+    "displayName": "Settings By Folder",
+    "description": "Change the settings of vscode (e.g. theme and colors) by the folder you are in",
+    "version": "1.0.0",
+    "publisher": "eyedean",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#ff9356",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eyedean/vscode-settings-by-folder.git"
+    },
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other",
+        "Formatters",
+        "Themes"
+    ],
+    "keywords": [
+        "settings",
+        "folder",
+        "theme",
+        "dynamic",
+        "file",
+        "type"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "jsonc-parser": "^2.1.0",
+        "tslint": "^5.8.0",
+        "typescript": "^2.7.2",
+        "vscode": "^1.1.6"
+    }
+}
